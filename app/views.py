@@ -19,17 +19,13 @@ from .decorators import unauthenticated_user, allowed_users, admin_only
 
 @unauthenticated_user
 def registerPage(request):
+
     form = createUserForm()
     if request.method == 'POST':
         form = createUserForm(request.POST)
         if form.is_valid():
             user = form.save()
             username = form.cleaned_data.get('username')
-
-            group = Group.objects.get(name='customer')
-            user.groups.add(group)
-
-            Customer.objects.create(user=user, name=user.username,)
 
             messages.success(request, 'Account was created for ' + username)
 
