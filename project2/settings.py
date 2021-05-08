@@ -146,4 +146,4 @@ EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = 'ciftekharulislam@gmail.com'
 
-EMAIL_HOST_PASSWORD = 'Shammy@!21367'
+EMAIL_HOST_PASSWORD = ''
